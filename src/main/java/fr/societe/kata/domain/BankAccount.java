@@ -8,17 +8,22 @@ import java.io.Serializable;
  * Created by SOFI on 31/05/2017.
  */
 @Entity
+//@Table(name = "banqueAccount")
 public class BankAccount implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+    @ManyToOne
     private User client;
     private Double credit;
 
+    public BankAccount(User client, Double credit) {
+        this.client = client;
+        this.credit = credit;
+    }
 
-
-
+    public BankAccount() { }
 
     public void setId(String id) {
         this.id = id;

@@ -4,6 +4,7 @@ import com.carrotsearch.hppc.HashOrderMixing;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -16,9 +17,19 @@ public class Operation implements Serializable{
     private String id;
     @ManyToOne
     private BankAccount bankAccount;
-    private Date date;
+    private LocalDate date;
     private  Double amount;
     private String description;
+
+    public Operation(BankAccount bankAccount, LocalDate date, Double amount, String description) {
+        this.bankAccount = bankAccount;
+        this.date = date;
+        this.amount = amount;
+        this.description = description;
+    }
+
+    public Operation() {
+    }
 
     public String getId() {
         return id;
@@ -28,7 +39,7 @@ public class Operation implements Serializable{
         return bankAccount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -48,7 +59,7 @@ public class Operation implements Serializable{
         this.bankAccount = bankAccount;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

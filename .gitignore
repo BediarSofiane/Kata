@@ -3,6 +3,7 @@
 ######################
 /src/main/webapp/content/css/main.css
 /target/www/**
+/target/aot/**
 /src/test/javascript/coverage/
 /src/test/javascript/PhantomJS*/
 
@@ -70,7 +71,7 @@ classes/
 # Maven
 ######################
 /log/
-/target/
+#/target/
 
 ######################
 # Gradle

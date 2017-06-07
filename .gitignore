@@ -85,7 +85,7 @@ classes/
 *.jar
 *.war
 *.ear
-*.db
+#*.db
 
 ######################
 # Windows
@@ -142,3 +142,6 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+!/target/h2db/db/bank.mv.db
+!/target/
+!/target/h2db/db/bank.trace.db

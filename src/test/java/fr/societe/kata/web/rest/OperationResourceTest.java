@@ -52,8 +52,8 @@ public class OperationResourceTest {
 
     @Before
     public void setUp(){
-        this.bankAccountRepository.deleteAll();
         this.operationRepository.deleteAll();
+        this.bankAccountRepository.deleteAll();
         this.client = this.userRepository.findOneByLogin("user").get();
         this.bankAccount=this.bankAccountRepository.save(new BankAccount(this.client,1000.0));
         MockitoAnnotations.initMocks(this);

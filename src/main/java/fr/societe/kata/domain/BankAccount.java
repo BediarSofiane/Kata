@@ -14,9 +14,10 @@ public class BankAccount implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+    private Double credit;
+    private String alias="Account";
     @ManyToOne
     private User client;
-    private Double credit;
 
     public BankAccount(User client, Double credit) {
         this.client = client;
@@ -48,6 +49,14 @@ public class BankAccount implements Serializable {
 
     public Double getCredit() {
         return credit;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     @Override

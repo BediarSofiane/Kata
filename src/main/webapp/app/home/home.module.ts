@@ -4,11 +4,14 @@ import { RouterModule } from '@angular/router';
 import { BankSharedModule } from '../shared';
 
 import { HOME_ROUTE, HomeComponent } from './';
+import {BankAccountService} from "../services/bank-account.service";
+import {AccountBankModule} from "../components/bank-account/bank-account.module";
 
 @NgModule({
     imports: [
         BankSharedModule,
-        RouterModule.forRoot([ HOME_ROUTE ], { useHash: true })
+        RouterModule.forChild([ HOME_ROUTE ]),
+        AccountBankModule
     ],
     declarations: [
         HomeComponent,
@@ -16,6 +19,10 @@ import { HOME_ROUTE, HomeComponent } from './';
     entryComponents: [
     ],
     providers: [
+
+    ],
+    exports:[
+        RouterModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

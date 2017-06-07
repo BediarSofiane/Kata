@@ -23,17 +23,21 @@ import {
     ActiveMenuDirective,
     ErrorComponent
 } from './layouts';
+import { BankAccountComponent } from './components/bank-account/bank-account.component';
+import {BankAccountService} from "./services/bank-account.service";
+import {AccountBankModule} from "./components/bank-account/index";
 
 @NgModule({
     imports: [
+        BankHomeModule,
         BrowserModule,
         LayoutRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         BankSharedModule,
-        BankHomeModule,
         BankAdminModule,
         BankAccountModule,
-        BankEntityModule
+        BankEntityModule,
+
     ],
     declarations: [
         JhiMainComponent,
@@ -41,13 +45,15 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+
     ],
     providers: [
         ProfileService,
         customHttpProvider(),
         PaginationConfig,
-        UserRouteAccessService
+        UserRouteAccessService,
+        BankAccountService
     ],
     bootstrap: [ JhiMainComponent ]
 })

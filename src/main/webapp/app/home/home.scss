@@ -6,9 +6,38 @@ Main page styles
 .hipster {
     display: inline-block;
     width: 347px;
-    height: 497px;
-    background: url("../../content/images/hipster.png") no-repeat center top;
+    height: 350px;
+    background: url("../../content/images/account.jpg") no-repeat center top;
     background-size: contain;
+}
+
+.module {
+    padding: 10px;
+    text-align: center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 300px;
+    background-color: #607D8B;
+    border-radius: 2px;
+    float: left;
+    margin:10px;
+}
+.module:hover {
+    background-color: #EEE;
+    cursor: pointer;
+    color: #607d8b;
+}
+
+.accounts{
+    display: inline-block;
+    width: 347px;
+
+}
+
+.selected{
+    background-color: #EEE;
+
+    color: #607d8b;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -20,7 +49,7 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
     .hipster {
-        background: url("../../content/images/hipster2x.png") no-repeat center top;
+        background: url("../../content/images/account.jpg") no-repeat center top;
         background-size: contain;
     }
 }
